@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+</head>
+
+<body>
+    <p>Please write your intake time:</p>
+    <form id="form" action="">
+        <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit('medicationIntakeTime', input.value);
+                input.value = '';
+            }
+        });
+
+        socket.on('notification', function (msg) {
+            window.alert("Time to take your medication at: " + msg + " o'clock")
+        });
+    </script>
+
+</body>
+
+</html> -->
