@@ -511,12 +511,8 @@ app.post('/history', authenticate, (req, res) => {
         _userId: req.user_id,
         date: req.body.date,
     }).then((history) => {
-  
-
+        
         if (history.length>0) {
-            console.log("in the if statement");
-            
-
             History.findOneAndUpdate({
                 date: req.body.date,
             }, {
@@ -525,12 +521,6 @@ app.post('/history', authenticate, (req, res) => {
             ).then(() => {
                 res.send({ message: 'Updated successfully.' })
             })
-            
-            
-            // history[0].takenMedications.push({ medicationName: name, intakeHour:hours, intakeMinutes:minutes });
-
-            // console.log(history[0].takenMedications);
-            
         } else {
             console.log("in the else statement");
 

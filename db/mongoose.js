@@ -6,9 +6,11 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 //port 27017 is the default port for mongodb + '/name of our database(TaskManager):
-// mongoose.connect('mongodb://localhost:27017/MedTracker', { useNewUrlParser: true }).then(() => {
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true }).then(() => {
+mongoose.connect('mongodb://localhost:27017/MedTracker', { useNewUrlParser: true }).then(() => {
+// mongoose.connect(process.env.DB_URL, { useNewUrlParser: true }).then(() => {
     console.log("Connected to MongoDB successfully :)");
+
+    console.log(process.env.DB_URL);
 }).catch((err) => {
     console.log("Error while attempting to connect to MongoDB");
     console.log(err);
