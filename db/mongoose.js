@@ -10,7 +10,6 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => {
     console.log("Connected to MongoDB successfully :)");
 
-    console.log(process.env.DB_URL);
 }).catch((err) => {
     console.log("Error while attempting to connect to MongoDB");
     console.log(err);
